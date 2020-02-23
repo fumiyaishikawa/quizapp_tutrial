@@ -3,6 +3,7 @@ let mix = require('laravel-mix');
 // resources/js/app.jsをpublic/jsにコンパイルする設定
 mix.js('resources/js/home.js', 'public/js')
     .js('resources/js/quiz.js', 'public/js')
+    .js('resources/js/app.js', 'public/js')
     // node-sassを使って、sassをcssにコンパイルする
     .sass('resources/sass/app.scss', 'public/css', {
         implementation: require('node-sass')
