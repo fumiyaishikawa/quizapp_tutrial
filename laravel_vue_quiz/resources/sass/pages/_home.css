@@ -1,0 +1,47 @@
+.home-quiz__introduction {
+  padding: 5px 10px;
+}
+
+.home-quiz__introduction-h2 {
+  border-bottom: solid;
+}
+
+.home-quiz__introduction-h2-logo {
+  width: 10%;
+}
+
+.home-quiz__setting {
+  padding: 5px 10px;
+}
+
+.home-quiz__setting-h2 {
+  border-bottom: solid;
+}
+
+.home-quiz__setting-h2-logo {
+  width: 10%;
+}
+
+.home-quiz__ranking {
+  padding: 5px 10px;
+}
+
+.home-quiz__ranking-h2 {
+  border-bottom: solid;
+}
+
+.home-quiz__ranking-h2-logo {
+  width: 10%;
+}
+
+.home__notice {
+  padding: 5px 10px;
+}
+
+.home__notice-h2 {
+  border-bottom: solid;
+}
+
+.home__notice-h2-logo {
+  width: 10%;
+}
