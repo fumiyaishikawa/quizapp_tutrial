@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Route::groupメソッドの最初の引数は、共通の属性を配列で指定するという意味
+// Route::group(['middleware' => ['api']] のメソッド配下で定義されたルーティングは全てapi middlewareを介します
+Route::group(['middleware' => ['api']], function () {
+  Route::get('information', 'Api\InformationController@index');
+});
