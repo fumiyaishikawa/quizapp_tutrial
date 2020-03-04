@@ -21,4 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::group(['middleware' => ['api']] のメソッド配下で定義されたルーティングは全てapi middlewareを介します
 Route::group(['middleware' => ['api']], function () {
   Route::get('information', 'Api\InformationController@index');
+  Route::get('category', 'Api\CategoryController@index');
 });
