@@ -71,7 +71,7 @@
                             data-toggle="modal"
                             data-target="#modal-result"
                             class="center-block"
-                            v-if="isQuizFinish"
+                            v-show="isQuizFinish"
                             @click="showResult"
                         >結果を見る</button>
                     </section>
@@ -83,6 +83,9 @@
 
         <!-- フッター -->
         <the-footer></the-footer>
+        <!-- propsとしてcorrectPercentageObjectを渡す -->
+        <!-- ref="modal"でthis.$refs.modalの記述で、子コンポーネント(TheModal)にアクセスできるように設定します。 -->
+        <the-modal :correctPercentageObject="correctPercentageObject" ref="modal"></the-modal>
     </div>
 </template>
 
@@ -90,12 +93,14 @@
 import TheHeader from "../layout/TheHeader";
 import TheFooter from "../layout/TheFooter";
 import TheSidebar from "../layout/TheSidebar";
+import TheModal from "../module/TheModal";
 
 export default {
     components: {
         TheHeader,
         TheFooter,
-        TheSidebar
+        TheSidebar,
+        TheModal
     },
     data() {
         return {
@@ -111,7 +116,8 @@ export default {
             isQuizFinish: false, //クイズが終了したかどうか
             score: 0,
             quizNumber: 1,
-            categoryName: ""
+            categoryName: "",
+            correctPercentageObject: {}
         };
     },
     mounted() {
@@ -178,10 +184,18 @@ export default {
                 this.isAlreadyAnswered = false;
             }
         },
-        endQUiz() {
+        endQuiz() {
             this.isQuizFinish = true;
             this.answerNo = "-";
             this.isAlreadyAnswered = true;
+            this.correctPercentageObject = {
+                correctScore: this.score,
+                mistakeScore: 10 - this.score
+            };
+        },
+        // 単純にクイズの結果を作成し、this.$refs.modal.render()で子コンポーネント(TheModal)に設定したrender()methodを呼び出す
+        showResult() {
+            this.$refs.modal.render();
         }
     }
 };

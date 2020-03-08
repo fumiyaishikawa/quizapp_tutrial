@@ -3,6 +3,12 @@ import router from './router.js'
 import SocialSharing from 'vue-social-sharing'
 import axios from 'axios'
 
+// jQueryで使うグローバル変数$とjQueryを設定
+import jQuery from "jquery";
+window.$ = window.jQuery = jQuery;
+// require('bootstrap')でbootstrapに関するJavaScriptファイルを読み込み、モーダルを開けるようする
+require('bootstrap');
+
 Vue.prototype.$http = axios;    // Axiosをグローバルに使えるようにする設定
 
 Vue.use(SocialSharing);
