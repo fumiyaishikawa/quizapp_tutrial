@@ -1,9 +1,5 @@
 <template>
     <div>
-        <!-- ヘッダー -->
-        <the-header></the-header>
-
-        <!-- コンテンツ -->
         <main>
             <div class="container">
                 <article class="col-md-8 col-xs-12">
@@ -103,22 +99,15 @@
                 <the-sidebar></the-sidebar>
             </div>
         </main>
-
-        <!-- フッター -->
-        <the-footer></the-footer>
     </div>
 </template>
 
 <script>
-import TheHeader from "../layout/TheHeader";
-import TheFooter from "../layout/TheFooter";
 import TheSidebar from "../layout/TheSidebar";
 import BarChart from "../module/BarCHart";
 
 export default {
     components: {
-        TheHeader,
-        TheFooter,
         TheSidebar,
         BarChart
     },

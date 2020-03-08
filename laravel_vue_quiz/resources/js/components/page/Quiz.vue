@@ -1,6 +1,5 @@
 <template>
     <div>
-        <the-header></the-header>
         <main>
             <div class="container">
                 <article class="col-md-8 col-xs-12">
@@ -80,9 +79,6 @@
                 <the-sidebar></the-sidebar>
             </div>
         </main>
-
-        <!-- フッター -->
-        <the-footer></the-footer>
         <!-- propsとしてcorrectPercentageObjectを渡す -->
         <!-- ref="modal"でthis.$refs.modalの記述で、子コンポーネント(TheModal)にアクセスできるように設定します。 -->
         <the-modal :correctPercentageObject="correctPercentageObject" ref="modal"></the-modal>
@@ -90,15 +86,11 @@
 </template>
 
 <script>
-import TheHeader from "../layout/TheHeader";
-import TheFooter from "../layout/TheFooter";
 import TheSidebar from "../layout/TheSidebar";
 import TheModal from "../module/TheModal";
 
 export default {
     components: {
-        TheHeader,
-        TheFooter,
         TheSidebar,
         TheModal
     },
